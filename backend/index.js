@@ -1,13 +1,14 @@
 const express = require('express');
 const cors = require('cors');
-const db = require('./db');
-const { configDotenv } = require('dotenv');
+const db = require('./db'); // Assuming './db' is a valid module that exports the database connection.
+const dotenv = require('dotenv'); // The correct import statement for dotenv.
 
 const app = express();
 const port = 5000;
 
+dotenv.config(); // Invoke dotenv to load environment variables from .env file.
+
 app.use(cors());
-configDotenv();
 app.get('/api/data', (req, res) => {
   const query = 'SELECT * FROM IOT';
   db.query(query, (err, result) => {

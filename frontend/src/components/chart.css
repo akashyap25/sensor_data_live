@@ -1,0 +1,70 @@
+/* chartStyles.css */
+
+/* Styling for the chart container */
+.chart-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Styling for the chart canvas */
+  .chart-canvas {
+    width: 100%;
+  }
+  
+  /* Styling for the chart legend */
+  .chart-legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  /* Styling for the chart legend items */
+  .chart-legend-item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  /* Styling for the legend color boxes */
+  .chart-legend-color {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+  }
+  
+  /* Styling for the legend text */
+  .chart-legend-text {
+    font-size: 14px;
+  }
+  
+  /* Styling for the chart title */
+  .chart-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Styling for the x-axis label */
+  .chart-x-axis-label {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 2vh;
+  }
+  
+  /* Styling for the y-axis label */
+  .chart-y-axis-label {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    transform: rotate(-90deg);
+    transform-origin: left top; /* Change the transform-origin to the top-left corner */
+    margin-right: 15vh; /* Add some margin to adjust the position from the left edge */
+    margin-top: 10vh; /* Add some margin from the top edge to prevent overlap */
+    white-space: nowrap; /* Prevent the label from wrapping to the next line */
+  }
+  
+  /* Additional styles for the tooltip and other chart elements can be added here */
+  
