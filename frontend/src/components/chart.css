@@ -66,5 +66,41 @@
     white-space: nowrap; /* Prevent the label from wrapping to the next line */
   }
   
-  /* Additional styles for the tooltip and other chart elements can be added here */
-  
+  /* Additional styles for the tooltip */
+.chartjs-tooltip {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Style the tooltip arrow */
+.chartjs-tooltip:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.7);
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Additional styles for the legend */
+.chart-legend {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Additional styles for the x-axis ticks */
+.chart-x-axis-label {
+  color: #333;
+}
+
+/* Additional styles for the y-axis ticks */
+.chart-y-axis-label {
+  color: #333;
+}

@@ -1,5 +1,5 @@
-import { Chart, LineController, LineElement, PointElement, LinearScale, TimeScale } from 'chart.js';
+import { Chart, LineController, LineElement, PointElement, LinearScale, TimeScale,CategoryScale } from 'chart.js';
 
-Chart.register(LineController, LineElement, PointElement, LinearScale, TimeScale);
+Chart.register(LineController, LineElement, PointElement, LinearScale, TimeScale,CategoryScale);
 
 export default Chart;
