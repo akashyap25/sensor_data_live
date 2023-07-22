@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Chart from './components/chart';
+import Footer from './components/footer';
 
 function App() {
   const [data, setData] = useState([]);
@@ -22,6 +23,7 @@ function App() {
     <div className="App">
       <h1>Sensor Data Chart</h1>
       {data.length > 0 ? <Chart data={data} /> : <p>Loading data...</p>}
+      <Footer/>
     </div>
   );
 }

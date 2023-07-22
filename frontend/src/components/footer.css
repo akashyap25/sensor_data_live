@@ -1,0 +1,64 @@
+/* footer.css */
+
+.footer-container {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .name {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .github-link {
+    color: #333;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+  .github-link:hover {
+    text-decoration: underline;
+  }
+  
+  .github-link::before {
+    content: '(';
+  }
+  
+  .github-link::after {
+    content: ')';
+  }
+  
+  .name::before {
+    content: 'Name: ';
+  }
+  
+  .github-link::before,
+  .github-link::after,
+  .name::before {
+    display: inline;
+  }
+  
+  .name::after {
+    content: ',';
+  }
+  
+  .footer-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-right span {
+    margin-left: 10px;
+  }
+  
+  .footer-right span:first-child {
+    margin-left: 0;
+  }
+  
