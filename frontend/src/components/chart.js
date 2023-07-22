@@ -2,17 +2,17 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Tooltip } from 'chart.js';
 import 'chartjs-adapter-moment';
-import moment from 'moment'; // Import moment library for date formatting
+import "../chartConfig"
+import moment from 'moment';
 import './chart.css';
-import ChartConfig from '../chartConfig';
 
 function Chart({ data }) {
   const formatTimestamp = (timestamp) => {
-    return moment(timestamp * 1000).format('MMM D, YYYY h:mm A'); // Convert to milliseconds and format the timestamp to human-readable date and time
+    return moment(timestamp * 1000).format('MMM D, YYYY h:mm A');
   };
 
   const temperatureHumidityData = {
-    labels: data.map((item) => formatTimestamp(item.Timestamp)), // Format timestamp labels
+    labels: data.map((item) => formatTimestamp(item.Timestamp)),
     datasets: [
       {
         label: 'Temperature',
@@ -32,7 +32,7 @@ function Chart({ data }) {
   };
 
   const xYZData = {
-    labels: data.map((item) => formatTimestamp(item.Timestamp)), // Format timestamp labels
+    labels: data.map((item) => formatTimestamp(item.Timestamp)),
     datasets: [
       {
         label: 'X',
@@ -62,12 +62,14 @@ function Chart({ data }) {
     tooltips: {
       enabled: false,
       custom: function (tooltipModel) {
+        if (!tooltipModel) return;
         // Tooltip Element
         var tooltipEl = document.getElementById('chartjs-tooltip');
 
         // Create element on first render
         if (!tooltipEl) {
           tooltipEl = document.createElement('div');
+          console.log("done");
           tooltipEl.id = 'chartjs-tooltip';
           tooltipEl.innerHTML = '<table></table>';
           document.body.appendChild(tooltipEl);
@@ -111,15 +113,8 @@ function Chart({ data }) {
             var span = '<span style="' + style + '"></span>';
             innerHtml += '<tr><td>' + span + body + '</td></tr>';
           });
-
-          // Display additional data from the dataset
-          var datasetIndex = tooltipModel.dataPoints[0].datasetIndex;
-          var datasetLabel = tooltipModel.datasets[datasetIndex].label;
-          var value = data[tooltipModel.dataPoints[0].index][datasetLabel.toLowerCase()];
-
-          innerHtml += '<tr><td>' + 'Value: ' + value + '</td></tr>';
-
           innerHtml += '</tbody>';
+          console.log(innerHtml);
 
           var tableRoot = tooltipEl.querySelector('table');
           tableRoot.innerHTML = innerHtml;
